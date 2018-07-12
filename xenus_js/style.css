@@ -1,0 +1,215 @@
+/* Extra small devices (portrait phones, less than 576px) this is the default size */
+body,
+html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial';
+}
+
+.wrapper {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial';
+}
+
+body {
+  display: grid;
+  margin: 0;
+  grid-template-columns: 180px auto;
+  grid-template-rows: 50px 150px auto 150px auto 150px auto 150px auto 50px;
+  grid-template-areas:
+    'logo title' 'market market'
+    'content-market content-market' 'dev dev' 'content-dev content-dev'
+    'rev rev' 'content-rev content-rev' 'truth truth'
+    'content-truth content-truth' 'space space';
+}
+
+.logo {
+  grid-area: logo;
+  background-color: aquamarine;
+  justify-self: end;
+}
+
+img {
+  width: 36px;
+}
+
+.title {
+  grid-area: title;
+  background-color: aqua;
+  padding-left: 15px;
+  line-height: 50px;
+  font-size: 25px;
+}
+
+.space {
+  grid-area: space;
+  background-color: beige;
+}
+
+.market {
+  grid-area: market;
+  background-color: beige;
+}
+
+.dev {
+  grid-area: dev;
+  background-color: darkgoldenrod;
+}
+
+.rev {
+  grid-area: rev;
+  background-color: darkseagreen;
+}
+
+.truth {
+  grid-area: truth;
+  background-color: lightsteelblue;
+}
+
+.content-market {
+  grid-area: content-market;
+  background-color: rgb(222, 176, 176);
+}
+
+.content-dev {
+  grid-area: content-dev;
+  background-color: rgb(222, 176, 176);
+}
+
+.content-rev {
+  grid-area: content-rev;
+  background-color: rgb(222, 176, 176);
+}
+
+.content-truth {
+  grid-area: content-truth;
+  background-color: rgb(222, 176, 176);
+}
+
+.toggle-content {
+  display: none;
+}
+
+.toggle-content.is-visible {
+  display: block;
+}
+
+/* Start Media Types */
+@media all and (max-width: 479px) {
+  html {
+    background: red;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 736px) {
+  html {
+    background: green;
+  }
+  body {
+    grid-template-columns:
+      auto minmax(240px, 368px) minmax(240px, 368px)
+      auto;
+    grid-template-rows: 200px 150px auto auto 150px auto auto 50px;
+    grid-template-areas:
+      '... logo title ...'
+      '... market dev ...'
+      '... content-market content-market ...'
+      '... content-dev content-dev ...'
+      '... rev truth ...'
+      '... content-rev content-rev ...'
+      '... content-truth content-truth ...'
+      '... space space ...';
+  }
+  img {
+    width: 150px;
+  }
+  .title {
+    line-height: 200px;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 737px) and (max-width: 979px) {
+  html {
+    background: rgb(101, 65, 211);
+  }
+  body {
+    grid-template-columns: auto repeat(4, minmax(184px, 244px)) auto;
+    grid-template-rows: 200px 130px auto auto auto auto 50px;
+    grid-template-areas:
+      '... ... logo title ... ...'
+      '... market dev rev truth ...'
+      '... content-market content-market content-market content-market ...'
+      '... content-dev content-dev content-dev content-dev ...'
+      '... content-rev content-rev content-rev content-rev ...'
+      '... content-truth content-truth content-truth content-truth ...'
+      '... space space space space ...';
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  html {
+    background: rgb(65, 191, 211);
+  }
+  body {
+    grid-template-columns: auto repeat(4, minmax(245px, 319px)) auto;
+    grid-template-rows: 200px 130px auto auto auto auto 50px;
+    grid-template-areas:
+      '... ... logo title ... ...'
+      '... market dev rev truth ...'
+      '... content-market content-market content-market content-market ...'
+      '... content-dev content-dev content-dev content-dev ...'
+      '... content-rev content-rev content-rev content-rev ...'
+      '... content-truth content-truth content-truth content-truth ...'
+      '... space space space space ...';
+  }
+  .title {
+    line-height: 200px;
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1689px) {
+  html {
+    background: rgb(208, 211, 65);
+  }
+  body {
+    grid-template-columns: auto repeat(4, minmax(320px, 350px)) auto;
+    grid-template-rows: 200px 130px auto auto auto auto 50px;
+    grid-template-areas:
+      '... ... logo title ... ...'
+      '... market dev rev truth ...'
+      '... content-market content-market content-market content-market ...'
+      '... content-dev content-dev content-dev content-dev ...'
+      '... content-rev content-rev content-rev content-rev ...'
+      '... content-truth content-truth content-truth content-truth ...'
+      '... space space space space ...';
+  }
+  .title {
+    line-height: 200px;
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1690px) {
+  html {
+    background: blue;
+  }
+  body {
+    grid-template-columns: auto repeat(4, minmax(320px, 350px)) auto;
+    grid-template-rows: 200px 130px auto auto auto auto 50px;
+    grid-template-areas:
+      '... ... logo title ... ...'
+      '... market dev rev truth ...'
+      '... content-market content-market content-market content-market ...'
+      '... content-dev content-dev content-dev content-dev ...'
+      '... content-rev content-rev content-rev content-rev ...'
+      '... content-truth content-truth content-truth content-truth ...'
+      '... space space space space ...';
+  }
+  .title {
+    line-height: 200px;
+    font-size: 60px;
+  }
+}
